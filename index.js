@@ -1,6 +1,6 @@
 // function mergeAlternately(word1, word2) {
 //     let mergeString = '';
-//     let i = 0, j = 0;
+//     let i= 0, j = 0;
 //     while (i < word1.length && j < word2.length) {
 //         mergeString +=word1[i];
 //         mergeString +=word2[j];
@@ -28,14 +28,52 @@
 //      return result;
 //    };
 
-function kidsWithCandies(candies, extraCandies){
-  const maxCandies = Math.max(...candies)
-  return candies.map(candy=> candy + extraCandies >= maxCandies)
+// function kidsWithCandies(candies, extraCandies){
+//   const maxCandies = Math.max(...candies)
+//   return candies.map(candy=> candy + extraCandies >= maxCandies)
  
+// }
+
+// // উদাহরণ
+// const candies1 = [4,2,1,1,2]
+// const extraCandies1 =1
+// const result = kidsWithCandies(candies1, extraCandies1)
+// console.log(result)
+
+// function canPlaceFlowers (flowerbed, n){
+//   count = 0;
+//   for (let i = 0; i < flowerbed.length; i++) {
+//     if (
+//       (flowerbed[i] === 0)  && (i=== 0 || flowerbed[i -1] === 0) && (i === flowerbed.length - 1 || flowerbed[i + 1] ===0)
+//     ) {
+//       flowerbed[i] = 1;
+//      count ++
+//     }
+  
+    
+//   }
+//   return count >= n;
+// }
+// const result = canPlaceFlowers([1,0,0,0,1], 1)
+// console.log(result)
+
+function reverseVowels(s){
+  const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+  let chars = s.split('');
+  let positions = [];
+  let vowelChars = [];
+  for (let i= 0; i< chars.length; i++) {
+    if (vowels.has(chars[i])) {
+      positions.push(i);
+      vowelChars.push(chars[i]);
+    } 
+  }
+  for (let i = 0; i < positions.length; i++) {
+    chars[positions[i]] = vowelChars[vowelChars.length - 1 - i];
 }
 
-// উদাহরণ
-const candies1 = [4,2,1,1,2]
-const extraCandies1 =1
-const result = kidsWithCandies(candies1, extraCandies1)
+return chars.join('');
+}
+
+const result = reverseVowels("leetcode")
 console.log(result)
