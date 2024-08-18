@@ -57,23 +57,30 @@
 // const result = canPlaceFlowers([1,0,0,0,1], 1)
 // console.log(result)
 
-function reverseVowels(s){
-  const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
-  let chars = s.split('');
-  let positions = [];
-  let vowelChars = [];
-  for (let i= 0; i< chars.length; i++) {
-    if (vowels.has(chars[i])) {
-      positions.push(i);
-      vowelChars.push(chars[i]);
-    } 
-  }
-  for (let i = 0; i < positions.length; i++) {
-    chars[positions[i]] = vowelChars[vowelChars.length - 1 - i];
-}
+// function reverseVowels(s){
+//   const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+//   let chars = s.split('');
+//   let positions = [];
+//   let vowelChars = [];
+//   for (let i= 0; i< chars.length; i++) {
+//     if (vowels.has(chars[i])) {
+//       positions.push(i);
+//       vowelChars.push(chars[i]);
+//     } 
+//   }
+//   for (let i = 0; i < positions.length; i++) {
+//     chars[positions[i]] = vowelChars[vowelChars.length - 1 - i];
+// }
 
-return chars.join('');
-}
+// return chars.join('');
+// }
 
-const result = reverseVowels("leetcode")
+// const result = reverseVowels("leetcode")
+// console.log(result)
+
+function reverseWords (s){
+  let word = s.trim().split(/\s+/);
+  return word.reverse().join(' ');
+}
+const result = reverseWords("the sky is blue");
 console.log(result)
