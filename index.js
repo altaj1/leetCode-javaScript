@@ -84,24 +84,42 @@
 // }
 // const result = reverseWords("the sky is blue");
 // console.log(result)
-function productExceptSelf (nums){
-  const n = nums.length;
-  const result = new Array(n).fill(1)
+// function productExceptSelf (nums){
+//   const n = nums.length;
+//   const result = new Array(n).fill(1)
  
-  let prefix = 1;
-  for (let i = 0; i <n; i++) {
-    result[i] = prefix;
-    prefix *= nums[i]
+//   let prefix = 1;
+//   for (let i = 0; i <n; i++) {
+//     result[i] = prefix;
+//     prefix *= nums[i]
     
-  }
+//   }
   
-  let suffix = 1
-  for (let i = n - 1; i >=0; i --) {
-    result[i] = suffix;
-    suffix *= nums[i]
+//   let suffix = 1
+//   for (let i = n - 1; i >=0; i --) {
+//     result[i] *= suffix;
+//     suffix *= nums[i]
     
+//   }
+//   return result
+// }
+// const result = productExceptSelf([1, 2, 3, 4])
+// console.log(result)
+
+function increasingTriplet(nums) {
+  let first = Infinity;
+  let second = Infinity;
+
+  for (let num of nums) {
+      if (num <= first) {
+          first = num;  // সবচেয়ে ছোট সংখ্যা আপডেট
+      } else if (num <= second) {
+          second = num;  // দ্বিতীয় ছোট সংখ্যা আপডেট
+      } else {
+          // যদি তৃতীয় সংখ্যা পাওয়া যায় যা `second` এর থেকেও বড়, তাহলে `true` রিটার্ন
+          return true;
+      }
   }
-  return result
+
+  return false;  // কোনো ভ্যালিড ট্রিপলেট পাওয়া যায়নি
 }
-const result = productExceptSelf([1, 2, 3, 4])
-console.log(result)
