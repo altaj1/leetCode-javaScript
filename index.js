@@ -107,19 +107,22 @@
 // console.log(result)
 
 function increasingTriplet(nums) {
-  let first = Infinity;
-  let second = Infinity;
-
+  let min1 = Infinity;
+  let min2 = Infinity;
+  
   for (let num of nums) {
-      if (num <= first) {
-          first = num;  // সবচেয়ে ছোট সংখ্যা আপডেট
-      } else if (num <= second) {
-          second = num;  // দ্বিতীয় ছোট সংখ্যা আপডেট
+      if (num <= min1) {
+        
+          min1 = num;
+      } else if (num <= min2) {
+        
+          min2 = num;
       } else {
-          // যদি তৃতীয় সংখ্যা পাওয়া যায় যা `second` এর থেকেও বড়, তাহলে `true` রিটার্ন
+          
           return true;
       }
   }
-
-  return false;  // কোনো ভ্যালিড ট্রিপলেট পাওয়া যায়নি
+  
+  return false;
 }
+const result = increasingTriplet([1,2,3,4,5])
