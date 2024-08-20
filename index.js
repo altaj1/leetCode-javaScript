@@ -125,4 +125,3 @@ function increasingTriplet(nums) {
   
   return false;
 }
-const result = increasingTriplet([1,2,3,4,5])
