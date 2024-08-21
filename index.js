@@ -106,22 +106,37 @@
 // const result = productExceptSelf([1, 2, 3, 4])
 // console.log(result)
 
-function increasingTriplet(nums) {
-  let min1 = Infinity;
-  let min2 = Infinity;
+// function increasingTriplet(nums) {
+//   let min1 = Infinity;
+//   let min2 = Infinity;
   
-  for (let num of nums) {
-      if (num <= min1) {
+//   for (let num of nums) {
+//       if (num <= min1) {
         
-          min1 = num;
-      } else if (num <= min2) {
+//           min1 = num;
+//       } else if (num <= min2) {
         
-          min2 = num;
-      } else {
+//           min2 = num;
+//       } else {
           
-          return true;
-      }
-  }
+//           return true;
+//       }
+//   }
   
-  return false;
+//   return false;
+// }
+function isSubsequence (s, t) {
+    sPointer = 0;
+    sLength = s.length;
+    for (let i = 0; i < t.length; i++) {
+        if (sPointer< sLength && s[sPointer] === t[i]) {
+            sPointer++;
+        }
+        
+    }
+    console.log(sPointer, sLength)
+    return sPointer === sLength
+
 }
+const resut = isSubsequence("abc", "ahbgdc")
+console.log(resut)
