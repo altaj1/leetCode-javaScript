@@ -125,3 +125,17 @@
   
 //   return false;
 // }
+function isSubsequence (s, t) {
+    sPointer = 0;
+    sLength = s.length;
+    for (let i = 0; i < t.length; i++) {
+        if (sPointer< sLength && s[sPointer] === t[i]) {
+            sPointer++;
+        }
+        
+    }
+    console.log(sPointer, sLength)
+    return sPointer === sLength
+
+}
+const resut = isSubsequence("abc", "ahbgdc")
