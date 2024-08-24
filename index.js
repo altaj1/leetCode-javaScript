@@ -138,4 +138,4 @@ function isSubsequence (s, t) {
     return sPointer === sLength
 
 }
-const resut = isSubsequence("abc", "ahbgdc")
+// const resut = isSubsequence("abc", "ahbgdc")
