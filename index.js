@@ -125,17 +125,27 @@
   
 //   return false;
 // }
-function isSubsequence (s, t) {
-    sPointer = 0;
-    sLength = s.length;
-    for (let i = 0; i < t.length; i++) {
-        if (sPointer< sLength && s[sPointer] === t[i]) {
-            sPointer++;
-        }
+// function isSubsequence (s, t) {
+//     sPointer = 0;
+//     sLength = s.length;
+//     for (let i = 0; i < t.length; i++) {
+//         if (sPointer< sLength && s[sPointer] === t[i]) {
+//             sPointer++;
+//         }
         
-    }
-    console.log(sPointer, sLength)
-    return sPointer === sLength
+//     }
+//     console.log(sPointer, sLength)
+//     return sPointer === sLength
 
+// }
+// const resut = isSubsequence("abc", "ahbgdc")
+function palindromeFun (val){
+    if (val < 0) {
+        return false
+    }
+    const valueStr = val.toString()
+    const rev = valueStr.split('').reverse().join('')
+    return rev == val
 }
-const resut = isSubsequence("abc", "ahbgdc")
+const resut = palindromeFun(121)
+console.log(resut)
