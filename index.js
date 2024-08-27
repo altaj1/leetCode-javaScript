@@ -183,4 +183,3 @@ var longestPalindrome = function(s) {
 
     return s.substring(start, end + 1);    
 };
-const result = longestPalindrome("babad")
